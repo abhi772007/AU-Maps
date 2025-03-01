@@ -1,0 +1,277 @@
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://i.postimg.cc/zvSfLhh9/Au-logo.jpg" alt="Logo" class="logo">
+            <div class="heading-container">
+                <h2 class="maps-heading">AU MAPS</h2>
+                <p class="guide-text">Guide to Navigate</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="room-search">
+            <input type="text" id="roomInput" placeholder="Enter room number or name">
+            <button onclick="searchRoom()">Search</button>
+        </div>
+        <div class="blocks">
+            <div class="block" onmouseover="showDetails('A')" onclick="showMap('A')">A BLOCK
+                <div class="details" id="details-A">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                        <li onclick="event.stopPropagation()">Lab</li>
+                        <li onclick="event.stopPropagation()">Office</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('B')" onclick="showMap('B')">B BLOCK
+                <div class="details" id="details-B">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Auditoriums</li>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                        <li onclick="event.stopPropagation()">Pharmacy Labs</li>
+                        <li onclick="event.stopPropagation()">Readers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('C')" onclick="showMap('C')">C BLOCK
+                <div class="details" id="details-C">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Auditoriums</li>
+                        <li onclick="event.stopPropagation()">Civil Labs</li>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('D')" onclick="showMap('D')">D BLOCK
+                <div class="details" id="details-D">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Auditoriums</li>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                        <li onclick="event.stopPropagation()">Labs</li>
+                        <li onclick="event.stopPropagation()">Offices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('E')" onclick="showMap('E')">E BLOCK
+                <div class="details" id="details-E">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Auditoriums</li>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                        <li onclick="event.stopPropagation()">Labs</li>
+                        <li onclick="event.stopPropagation()">Offices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('F')" onclick="showMap('F')">F BLOCK
+                <div class="details" id="details-F">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Offices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('G')" onclick="showMap('G')">G BLOCK
+                <div class="details" id="details-G">
+                    <ul>
+                        <li onmouseover="showSubDetails('libraries')" onclick="event.stopPropagation()">Libraries
+                            <ul class="sub-details" id="sub-details-libraries">
+                                <li onclick="event.stopPropagation()">Central Library</li>
+                                <li onclick="event.stopPropagation()">Digital Library</li>
+                                <li onclick="event.stopPropagation()">Reference Books</li>
+                            </ul>
+                        </li>
+                        <li onclick="event.stopPropagation()">Offices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('H')" onclick="showMap('H')">H BLOCK
+                <div class="details" id="details-H">
+                    <ul>
+                        <li onclick="event.stopPropagation()">Classrooms</li>
+                        <li onclick="event.stopPropagation()">Labs</li>
+                        <li onclick="event.stopPropagation()">Seminar Halls</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block" onmouseover="showDetails('CANTEENS')" onclick="showMap('CANTEENS')">CANTEENS
+                <div class="details" id="details-CANTEENS">
+                    <ul>
+                        <li onclick="showMap('APJ')">APJ Abdul Kalam Hall</li>
+                        <li onclick="showMap('Mithrama')">Mithrama Canteen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="map" id="map">
+            <img src="https://allegiance-educare.in/storage/uploads/colleges/1660634891Screenshot%202022-08-16%20125248.jpg" alt="Default Map Image" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </main>
+    <style>
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo {
+            width: calc(100px + 1cm);
+            height: 100px;
+        }
+        .heading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .maps-heading {
+            color: rgb(4, 4, 97);
+            margin: 0;
+            font-size: 4rem;
+        }
+        .guide-text {
+            font-size: 1.5rem;
+            margin-top: 0.2rem;
+        }
+        .room-search {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            justify-content: center;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .room-search input {
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            flex: 3;
+        }
+        .room-search button {
+            background-color: rgb(4, 4, 97);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 0.3rem 1rem;
+            font-size: 1rem;
+            flex: 1;
+        }
+        .room-search button:hover {
+            background-color: #042883;
+        }
+        .blocks {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            margin-left: 2rem;
+        }
+        .block {
+            background-color: #fafafa;
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            text-align: center;
+            flex: 1;
+            box-sizing: border-box;
+            cursor: pointer;
+            position: relative;
+        }
+        .block:hover {
+            background-color: #ffffff;
+        }
+        .details {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            z-index: 1;
+            text-align: left;
+        }
+        .details ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .sub-details {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            white-space: nowrap;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            z-index: 1;
+            margin-left: 10px;
+        }
+        .details li:hover .sub-details {
+            display: block;
+        }
+        .block:hover .details {
+            display: block;
+        }
+        .map {
+            width: 100%;
+            height: 500px;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+        .block-link {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <script>
+        function searchRoom() {
+            const room = document.getElementById('roomInput').value;
+            const map = document.getElementById('map');
+            if (room) {
+                map.innerHTML = `Displaying location for room: ${room}`;
+            } else {
+                map.innerHTML = 'Please enter a room number or name.';
+            }
+        }
+
+        function showMap(block) {
+            const map = document.getElementById('map');
+            if (block === 'A') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d951.7054869893708!2d78.6560432!3d17.4203304!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9e1e0ef5e1c7%3A0x83e5954b19cc3208!2sDepartment%20of%20CSE%20-%20Block%20A!5e0!3m2!1sen!2sin!4v1740730471219!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'B') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d951.7054869893708!2d78.6560432!3d17.4203304!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f74c571ed55%3A0xca958203099b13ad!2sSchool%20Of%20Pharmacy!5e0!3m2!1sen!2sin!4v1740730782766!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'C') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d737.6897851667935!2d78.65606973917272!3d17.42044722614873!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb756e7dc71f53%3A0x23559f808c46f385!2sCivil%20Engineering!5e0!3m2!1sen!2sin!4v1740731074994!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'D') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d777.0578523141783!2d78.65637318830616!3d17.419479446887703!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9e1e1b20d2ad%3A0xfb97132ce50a9b1!2sAnurag%20Group%20of%20Institutions%20D%20Block!5e0!3m2!1sen!2sin!4v1740731398482!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'E') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d963.3216818558591!2d78.65541759242858!3d17.420040998082005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f18400b6e91%3A0xb27c1e651be57a76!2sDepartment%20of%20ECE%20and%20AI%2C%20Block%20E!5e0!3m2!1sen!2sin!4v1740731714712!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'F') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777.7890383786337!2d78.65556833922227!3d17.420385931409083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9fa562616459%3A0x54d4f6d5f68c2dd0!2sExaminations%20Branch%2C%20Anurag%20University!5e0!3m2!1sen!2sin!4v1740732032998!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'G') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d262.47785520504647!2d78.6555457733338!3d17.420332584298645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9fe9a66ba9bb%3A0xe6e90e44f2ba2691!2sAnurag%20Library!5e0!3m2!1sen!2sin!4v1740732094871!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'H') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d951.7139871400644!2d78.6556019!3d17.4186994!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f0051602649%3A0x778e3939ffc01488!2sH-%20Block!5e0!3m2!1sen!2sin!4v1740730913598!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'APJ') {
+                map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d552.3259549716405!2d78.65743067825593!3d17.419761648627215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb755f8b3e441d%3A0xbe508b89d2d4a30b!2sApj%20abdul%20kalam%20hall%20Anurag%20University!5e0!3m2!1sen!2sin!4v1740732207160!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (block === 'Mithrama') {
+                map.innerHTML ='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11185.452482883195!2d78.65467763715193!3d17.424808848511635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f00271212f9%3A0xf04529885e25ab27!2sMithrama%20Cafe!5e0!3m2!1sen!2sin!4v1740760079063!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> ';
+        }
+             
+        }
+    </script>
+</body>
